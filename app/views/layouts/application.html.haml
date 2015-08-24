@@ -6,4 +6,19 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body{class: "#{controller_name}"}
-  = yield
+    #banner
+      = image_tag('logo.png')
+      = @page_title || 'Pragmatic Bookshelf'
+    #columns
+      #side
+        %ul
+          %li
+            %a{href: 'http://www....'} ホーム
+          %li
+            %a{href: 'http://www..../faq'} よくある質問
+          %li
+            %a{href: 'http://www..../news'} ニュース
+          %li
+            %a{href: 'http://www..../contact'} お問い合わせ
+      #main
+        = yield
