@@ -23,7 +23,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'capybara'
   gem 'factory_girl_rails'
-  gem 'faker'
 end
 
 group :development, :test do
@@ -32,6 +31,7 @@ group :development, :test do
   gem 'spring'
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'faker'
 end
 
 group :production do
