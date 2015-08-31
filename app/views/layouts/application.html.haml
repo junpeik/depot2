@@ -2,7 +2,7 @@
 %html
   %head
     %title Depot2
-    = stylesheet_link_tag    'application', media: 'all'
+    = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body{class: "#{controller_name}"}
@@ -11,9 +11,11 @@
       = @page_title || 'Pragmatic Bookshelf'
     #columns
       #side
+        = hidden_div_if(@cart.line_items.empty?, id: 'cart') do
+          = render @cart
         %ul
           %li
-            %a{href: 'http://www....'} ホーム
+            =link_to 'ホーム', root_path
           %li
             %a{href: 'http://www..../faq'} よくある質問
           %li
